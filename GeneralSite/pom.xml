@@ -1,0 +1,271 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.BasicManagementSystem</groupId>
+	<artifactId>GeneralSite</artifactId>
+	<version>${project-version}</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project-version>0.0.1-SNAPSHOT</project-version>
+		<!-- Generic properties -->
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- Spring -->
+		<spring-framework.version>4.1.1.RELEASE</spring-framework.version>
+		<aopalliance.version>1.0</aopalliance.version>
+		<aspectj.version>1.8.9</aspectj.version>
+		<jstl.version>1.2</jstl.version>
+		<servletapi.version>2.5</servletapi.version>
+		<jspapi.version>2.1</jspapi.version>
+		<!-- Logging -->
+		<org.slf4j-version>1.7.5</org.slf4j-version>
+		<!-- Test -->
+		<junit.version>4.11</junit.version>
+		<log4j.version>1.2.17</log4j.version>
+		<slf4j.version>1.7.5</slf4j.version>
+		<commons-loggings.version>1.1.2</commons-loggings.version>
+		<mongo-java-driver>2.12.2</mongo-java-driver>
+		<spring-data-mongodb>1.6.0.RELEASE</spring-data-mongodb>
+		<commons-io>2.4</commons-io>
+		<commons-fileupload>1.3.1</commons-fileupload>
+		<shiro-core>1.2.3</shiro-core>
+		<commons-lang3>3.5</commons-lang3>
+		<gson>2.2.4</gson>
+		<itext>4.2.2</itext>
+		<jsoup>1.8.3</jsoup>
+		<ant>1.9.4</ant>
+		<poi-ooxml>3.7</poi-ooxml>
+		<thumbnailator.version>0.4.8</thumbnailator.version>
+	</properties>
+
+
+
+
+
+	<dependencyManagement>
+		<dependencies>
+			<!--添加SpringMVC的依赖jar包 -->
+			<!-- Spring MVC -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring-framework.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring-framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${spring-framework.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${spring-framework.version}</version>
+			</dependency>
+
+			<!-- SpringAOP 的依赖jar包 -->
+			<dependency>
+				<groupId>aopalliance</groupId>
+				<artifactId>aopalliance</artifactId>
+				<version>${aopalliance.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+
+			<!-- Other Web dependencies -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>${jstl.version}</version>
+			</dependency>
+			<!-- Servlet -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>${servletapi.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet.jsp</groupId>
+				<artifactId>jsp-api</artifactId>
+				<version>${jspapi.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- log4j -->
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>${commons-loggings.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+
+			<!-- mongodb java driver -->
+			<!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+			<dependency>
+				<groupId>org.mongodb</groupId>
+				<artifactId>mongo-java-driver</artifactId>
+				<version>${mongo-java-driver}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-mongodb -->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-mongodb</artifactId>
+				<version>${spring-data-mongodb}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${commons-fileupload}</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3}</version>
+			</dependency>
+
+
+			<!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-core -->
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-core</artifactId>
+				<version>${shiro-core}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-web -->
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-web</artifactId>
+				<version>${shiro-core}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring -->
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-spring</artifactId>
+				<version>${shiro-core}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>2.2.4</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>2.1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>2.1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>2.1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.BasicManagementSystem</groupId>
+				<artifactId>Spring-data-MongodbFrameWork</artifactId>
+				<version>${project-version}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/com.lowagie/itext -->
+			<dependency>
+				<groupId>com.lowagie</groupId>
+				<artifactId>itext</artifactId>
+				<version>${itext}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+			<dependency>
+				<groupId>org.jsoup</groupId>
+				<artifactId>jsoup</artifactId>
+				<version>${jsoup}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.apache.ant/ant -->
+			<dependency>
+				<groupId>org.apache.ant</groupId>
+				<artifactId>ant</artifactId>
+				<version>${ant}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml</artifactId>
+				<version>${poi-ooxml}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator -->
+			<dependency>
+				<groupId>net.coobird</groupId>
+				<artifactId>thumbnailator</artifactId>
+				<version>${thumbnailator.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<plugins>
+
+			<!-- 配置之后每次编译的时候不会去执行junit中的@Test -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+
+	<modules>
+		<module>System-Management</module>
+		<module>System-Management-Web</module>
+		<module>app-School</module>
+		<module>app-School-Web</module>
+		<module>Spring-data-MongodbFrameWork</module>
+		<module>General-Web</module>
+		<module>General-WebApp</module>
+		<module>App-FileSystem</module>
+		<module>App-FileSystem-Web</module>
+	</modules>
+</project>

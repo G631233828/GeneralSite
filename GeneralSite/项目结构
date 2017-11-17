@@ -1,0 +1,7 @@
+Spring-MongodbFrameWork     mongodb底层封装      数据库相关配置都再此
+System-Management           系统类的代码
+System-Management-Web       独立系统的web
+General-Web                 通用的样式以及配置文件，最终生成的项目都在这里
+//General-WebApp            war包合并模块 项目需要哪些war在 这个模块中的pom进行配置(合并war包时间太久已修改合并到General-Web中)
+app-School                  学校app模块
+app-School-Web              学校appWeb模块
