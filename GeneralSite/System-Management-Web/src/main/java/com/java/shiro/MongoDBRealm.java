@@ -30,9 +30,6 @@ public class MongoDBRealm extends AuthorizingRealm {
     @Autowired
     private ResourceService resourceService;
 
-    /*
-     * @Autowired private ResUserService resUserService;
-     */
 
     @Override  
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
@@ -47,16 +44,16 @@ public class MongoDBRealm extends AuthorizingRealm {
 		
 		if (user != null) {
 
-	/*	   // 通过用户名获取用户对象
-		    User u = this.userServiceImpl.findUserById(user.getId());
+	   // 通过用户名获取用户对象
+		/*    User u = this.userServiceImpl.findUserById(user.getId());
 		    List<Resource> rs = u.getResource();
 		    // 权限信息对象info，用来存放查出的用户所有角色（role）及权限（permission）
 		    SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
 		    for (Resource r : rs) {
 			log.info("资源：" + r.getName() + ":" + r.getResUrl());
 			info.addStringPermission(r.getResKey());
-		    }
-			*/
+		    }*/
+			
 			
 			//-----------------------------------------
 			 User u = this.userServiceImpl.findUserById(user.getId());
@@ -106,13 +103,13 @@ public class MongoDBRealm extends AuthorizingRealm {
 	    if (user != null) {
 		// 当验证都通过后，把用户信息放在session里
 		Session session = SecurityUtils.getSubject().getSession();
-		// List<ResUser> ru=
-		// this.resUserService.findResourcesIdByUserId(user.getId());
+
 		User u = this.userServiceImpl.findUserById(user.getId());
 
 		// 通过集合获取资源
-		// List<Resource> rs=this.resourceService.findlistResource(ru);
+
 		List<Resource> rs = u.getRole().getResource();
+		//List<Resource> rs = u.getResource();
 		session.setAttribute(Constant.USER_SESSION, user);
 		session.setAttribute(Constant.USER_SESSION_ID, user.getId());
 		session.setAttribute(Constant.resourceslist, rs);

@@ -1,13 +1,9 @@
 package com.java.FileSystem.Controller;
 
 import java.util.Date;
-import java.util.List;
-
-import javax.servlet.http.HttpSession;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.mongodb.framework.action.GeneralAction;
-import org.mongodb.framework.util.Pagination;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.java.FileSystem.pojo.FileType;
 import com.java.FileSystem.pojo.FileTypeName;
 import com.java.FileSystem.service.Impl.FileTypeNameService;
 import com.java.annotation.SystemControllerLog;
-import com.java.pojo.Role;
 
 /**
  * 

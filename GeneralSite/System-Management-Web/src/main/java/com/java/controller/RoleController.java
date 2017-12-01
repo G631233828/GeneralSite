@@ -213,7 +213,7 @@ public class RoleController extends GeneralAction<Role> {
 	@ResponseBody
 	@RequestMapping("/addauthor")
 	public  ModelAndView  addauthor(HttpSession session,@RequestParam(defaultValue="",value="id")String id,
-			@RequestParam(value = "ids", defaultValue = "") String ids){
+			@RequestParam(value = "checkallPermission", defaultValue = "") String checkallPermission){
 		
 		ModelAndView modelAndView  = new ModelAndView();
 		
@@ -227,7 +227,7 @@ public class RoleController extends GeneralAction<Role> {
 			
 			this.roleService.save(role);
 			
-			String[] strids = ids.split(",");
+			String[] strids = checkallPermission.split(",");
 			
 			for (String resids : strids) {
 				// 通过资源的id获取资源
@@ -264,12 +264,6 @@ public class RoleController extends GeneralAction<Role> {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
-		
-		
-		
 		
 		return modelAndView;
 		

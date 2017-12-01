@@ -28,7 +28,6 @@ function setPermission(o){
 }
 
 
-
 </script>
 
 
@@ -111,8 +110,8 @@ function setPermission(o){
 															<tr>
 																<th style="width: 20px;">
 																	<div class="checkbox  checkbox-inline">
-																		<input type="checkbox" id="checkall" name="checkall" />
-																		<label for="checkall"></label>
+																		<input type="checkbox" id="checkallPermission" name="checkallPermission" />
+																		<label for="checkallPermission"></label>
 																	</div>
 																</th>
 																<th style="width: 200px;">菜单名称</th>
@@ -127,7 +126,7 @@ function setPermission(o){
 																	<tr class="gradeX">
 																		<td>
 																			<div class="checkbox checkbox-inline">
-																				<input type="checkbox" name="ids" id="${items.id}"  value="${items.id}"> <label for="${items.id}"></label>
+																				<input type="checkbox" name="permisids" id="${items.id}"  value="${items.id}"> <label for="${items.id}"></label>
 																			</div>
 																		<td>${items.name }</td>
 																		<td></td>
@@ -139,14 +138,14 @@ function setPermission(o){
 																			<tr class="gradeX">
 																				<td>
 																					<div class="checkbox checkbox-inline">
-																						<input type="checkbox" name="ids" id="${itemsmenu.id}" value="${itemsmenu.id}"> <label for="${itemsmenu.id}"></label>
+																						<input type="checkbox" name="permisids" id="${itemsmenu.id}" value="${itemsmenu.id}"> <label for="${itemsmenu.id}"></label>
 																					</div>
 																				<td>${items.name}-${itemsmenu.name }</td>
 																				<td><c:forEach items="${listResource}"
 																						var="itemsbutton" varStatus="status">
 																						<c:if
 																							test="${itemsbutton.parentId eq itemsmenu.id }">
-																							<input type="checkbox" id="${itemsbutton.id}" value="${itemsbutton.id}" name="ids">${itemsbutton.name }
+																							<input type="checkbox" id="${itemsbutton.id}" value="${itemsbutton.id}" name="permisids">${itemsbutton.name }
 																			</c:if>
 																					</c:forEach></td>
 
@@ -350,5 +349,11 @@ function setPermission(o){
 		</div>
 		<!-- rightpanel -->
 	</section>
+	
+	
+	
+	
+	
+	
 </body>
 </html>

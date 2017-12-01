@@ -42,6 +42,21 @@
 			})
 		})
 		
+	$("#checkallPermission").click(function() {
+		var flag = $("[name=checkallPermission]:checkbox").is(':checked');
+		$("[name=permisids]:checkbox").each(function() {
+			$(this).prop("checked", flag);
+		})
+	})
+
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	    // Show aciton upon row hover
 	    jQuery('.table-hidaction tbody tr').hover(function(){
